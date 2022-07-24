@@ -9,9 +9,5 @@ public class Poster {
         this.genre = genre;
     }
 
-    public String getName() {
-        return name;
-    }
-
 
 }

@@ -58,7 +58,7 @@ public class PosterTest {
     }
     @Test
     public void shouldFindLast5() {
-        Manager manager = new Manager();
+        Manager manager = new Manager(5);
         manager.add(film4);
         manager.add(film5);
         manager.add(film6);
@@ -72,4 +72,24 @@ public class PosterTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+    @Test
+    public void shouldFindLast8() {
+        Manager manager = new Manager(10);
+        manager.add(film1);
+        manager.add(film2);
+        manager.add(film3);
+        manager.add(film4);
+        manager.add(film5);
+        manager.add(film6);
+        manager.add(film7);
+        manager.add(film8);
+
+        manager.findLast();
+
+        Poster[] expected = {film8, film7, film6, film5, film4, film3, film2, film1};
+        Poster[] actual = manager.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
+
